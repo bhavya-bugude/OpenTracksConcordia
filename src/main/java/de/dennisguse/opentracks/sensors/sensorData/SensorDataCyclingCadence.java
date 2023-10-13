@@ -84,4 +84,12 @@ public class SensorDataCyclingCadence extends SensorData<Cadence> {
             return false;
         }
     }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (crankRevolutionsCount != null ? crankRevolutionsCount.hashCode() : 0);
+        result = 31 * result + (crankRevolutionsTime != null ? crankRevolutionsTime.hashCode() : 0);
+        return result;
+    }
 }
